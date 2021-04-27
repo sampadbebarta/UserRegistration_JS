@@ -23,6 +23,16 @@ readline.question("Enter your Last Name:", (lastName) => {
         console.log("LastName is valid");
     else
         console.log("LastName is Ivalid name");
+
+
+let mailregex = RegExp("^[a-zA-Z0-9]+([._+-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3})?$");
+readline.question("Enter your Email id:", (lastName) => {
+        let checkEmail = mailregex.test(email);
+        if(checkEmail == true)
+            console.log("Email id is Valid");
+        else
+            console.log("Email id is Invalid");
     readline.close();
-    
-})})
+
+
+})})})
