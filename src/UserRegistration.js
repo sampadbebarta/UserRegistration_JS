@@ -1,16 +1,23 @@
+let myPromise = new Promise(function(myResolve, myReject) {
 module.exports=
 {
     patternMatching(inputPattern,validPattern) 
     {
         if(validPattern.test(inputPattern))
         {
-            console.log("Valid");
+            myResolve("Valid");
             return true;
         }
         else
         {
-            console.log("Invalid");
+            myReject("Invalid");
             return false;
         }
     }
 }
+})
+
+myPromise.then(
+    function(value) {patternMatching(value);},
+    function(error) {patternMatching(error);}
+);
