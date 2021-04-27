@@ -2,7 +2,7 @@ const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
   });
-
+  
 let firstNameRegex = RegExp("^[A-Z]{1}[A-Za-z]{2}");
 
 console.log("Welcome to User Registration Problem");
@@ -24,5 +24,5 @@ readline.question("Enter your Last Name:", (lastName) => {
     else
         console.log("LastName is Ivalid name");
     readline.close();
-
+    
 })})
