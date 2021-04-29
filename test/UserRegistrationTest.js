@@ -11,6 +11,31 @@ describe('Testing the check pattern method',function(){
         console.log('First Name is :',fName);
         assert.equal(fName,true)
     })
+    it('When passed an empty string',function(){
+        const fName = utility.patternMatching('',VALIDNAMEPATTERN);
+        console.log('First Name is :',fName);
+        assert.isNotOk(false, fName[0]);
+    })
+    it('Wnen passed a string',function(){
+        const fName = utility.patternMatching('Sampad',VALIDNAMEPATTERN);
+        console.log('First Name is :',fName);
+        assert.isOk(true, fName[0])
+    })
+    it('To check same string is returned',function(){
+        const fName = utility.patternMatching('Sampad',VALIDNAMEPATTERN);
+        console.log('First Name is :',fName);
+        assert.notEqual("Sa", fName[0])
+    })
+    it('To check value returned is not False',function(){
+        const fName = utility.patternMatching('Sampad',VALIDNAMEPATTERN);
+        console.log('First Name is :',fName);
+        assert.isNotFalse(fName[2])
+    })
+    it('To check value returned is not null',function(){
+        const fName = utility.patternMatching('Sampad',VALIDNAMEPATTERN);
+        console.log('First Name is :',fName);
+        assert.isNotNull(fName[0])
+    })
     it('Check Last Name String',function(){
         const lName = utility.patternMatching('Bebarta',VALIDNAMEPATTERN);
         console.log('Last Name is:',lName);
